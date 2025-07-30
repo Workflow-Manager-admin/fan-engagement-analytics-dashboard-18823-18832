@@ -1,0 +1,72 @@
+.donutWrap {
+  position: relative;
+  width: 210px;
+  margin: 1.6rem 0.4rem 2.8rem 0.4rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  outline: none;
+}
+.donutSvg {
+  width: 166px;
+  height: 166px;
+  margin-bottom: 1.1rem;
+}
+.segment {
+  transition: stroke-dasharray 1s cubic-bezier(.3,.72,.17,.98);
+  will-change: stroke-dasharray;
+}
+.innerLabel {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 36%;
+  text-align: center;
+  pointer-events: none;
+}
+.title {
+  font-weight: 700;
+  color: #4353ff;
+  background: linear-gradient(90deg, #13cf87 20%, #4353ff 60%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 1.18em;
+  user-select: none;
+}
+.legend {
+  margin: 1rem 0 0 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.18rem;
+  width: 140px;
+  list-style: none;
+}
+.legendItem {
+  display: flex;
+  align-items: center;
+  font-size: 0.98em;
+  gap: 0.7em;
+  color: #1a1a34;
+  font-weight: 600;
+}
+.legendNum {
+  margin-left: auto;
+  color: #ff7e5f;
+  font-weight: 700;
+}
+.legendSwatch {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  border-radius: 2.5px;
+  margin-right: 7px;
+  border: 2.5px solid #fff;
+  box-shadow: 0 0 0 1px #4353ff44;
+}
+@media (max-width: 610px) {
+  .donutWrap {
+    transform: scale(0.95);
+    margin-bottom: 0.8rem;
+  }
+}

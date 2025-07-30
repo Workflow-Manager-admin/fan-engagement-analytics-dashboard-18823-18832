@@ -21,12 +21,195 @@
   --button-text: #ffffff;
 }
 
+/* Theme and base styles */
+:root {
+  --color-accent: #ff7e5f;
+  --color-primary: #4353ff;
+  --color-secondary: #13cf87;
+  --bg-main: #f4f6fc;
+  --bg-panel: #fff;
+  --text-main: #282c34;
+  --border-soft: #e9ecef;
+  --shadow-hero: 0 2px 22px 0 rgba(67, 83, 255, 0.14);
+  --radius-main: 1.3rem;
+  --font-main: 'Inter', 'Segoe UI', Arial, sans-serif;
+}
+
+body,
 .App {
-  text-align: center;
-  background-color: var(--bg-primary);
-  color: var(--text-primary);
+  background: var(--bg-main);
+  font-family: var(--font-main);
   min-height: 100vh;
-  transition: background-color 0.3s ease, color 0.3s ease;
+  margin: 0;
+}
+.App {
+  color: var(--text-main);
+  min-height: 100vh;
+  padding: 0;
+  margin: 0;
+}
+.dashboard-main {
+  width: 100vw;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2.7rem 2vw 1.7rem 2vw;
+  background: none;
+  min-height: 100vh;
+}
+.dashboard-panel {
+  background: var(--bg-panel);
+  border-radius: var(--radius-main);
+  box-shadow: var(--shadow-hero);
+  margin: 1.45rem 0;
+  padding: 1.8rem 1.7rem 1.3rem 1.7rem;
+  transition: box-shadow 0.25s, background 0.32s, padding 0.22s;
+  position: relative;
+  outline: none;
+}
+.dashboard-panel-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 1.18em;
+  font-weight: 700;
+  color: var(--text-main);
+  margin-bottom: 1.3em;
+  gap: 1.15em;
+}
+.dashboard-panel-header .collapse-btn {
+  min-width: 2.25em;
+  border: none;
+  background: none;
+  font-size: 1.12em;
+  color: var(--color-secondary);
+  cursor: pointer;
+  margin-left: 1.2em;
+  border-radius: 0.4em;
+  font-weight: bold;
+}
+.dashboard-panel-header .collapse-btn:focus {
+  outline: 2px solid var(--color-secondary);
+  background: #effafd;
+}
+.metrics-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 2rem;
+  margin: 2.2rem 0 0.9rem 0;
+  flex-wrap: wrap;
+}
+.analytics-panels-row,
+.advanced-stats-row {
+  display: flex;
+  gap: 2.2rem;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.analytics-panel,
+.stat-visual {
+  width: 220px;
+  max-width: 100vw;
+  flex: 1 1 210px;
+  background: none;
+}
+.analytics-subtitle {
+  color: var(--color-accent);
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  font-size: 1.09em;
+  margin-bottom: 0.5em;
+}
+
+.dashboard-footer {
+  margin-top: 2.7rem;
+  font-size: 1.09em;
+  color: #bac3ea;
+  text-align: center;
+  padding-bottom: 2rem;
+  border-radius: 0 0 1.1rem 1.1rem;
+}
+.theme-toggle {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  background-color: var(--button-bg, #4353ff);
+  color: var(--button-text, #ffffff);
+  border: none;
+  border-radius: 8px;
+  padding: 10px 20px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(.65, .1,.2,1);
+  box-shadow: 0 2px 4px rgba(67, 83, 255, 0.08);
+}
+.theme-toggle:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(67, 83, 255, 0.18);
+  opacity: 0.96;
+}
+.theme-toggle:active {
+  transform: translateY(0);
+}
+@media (max-width: 1100px) {
+  .dashboard-panel,
+  .dashboard-main {
+    padding-left: 2vw;
+    padding-right: 2vw;
+  }
+  .metrics-row,
+  .analytics-panels-row,
+  .advanced-stats-row {
+    gap: 0.93rem;
+  }
+}
+@media (max-width: 800px) {
+  .dashboard-main {
+    width: 100vw;
+    padding: 1vw;
+  }
+  .metrics-row,
+  .analytics-panels-row,
+  .advanced-stats-row {
+    flex-wrap: wrap;
+    gap: 0.49rem;
+  }
+  .analytics-panel,
+  .stat-visual {
+    min-width: 158px;
+    max-width: 99vw;
+  }
+}
+@media (max-width: 650px) {
+  .dashboard-panel {
+    padding-left: 6px;
+    padding-right: 6px;
+    margin-right: 0;
+    margin-left: 0;
+    border-radius: 0.6rem;
+  }
+  .metrics-row {
+    flex-direction: column;
+    gap: 0.4rem;
+    align-items: stretch;
+  }
+  .analytics-panels-row,
+  .advanced-stats-row {
+    flex-direction: column;
+    gap: 0.72rem;
+    align-items: stretch;
+  }
+  .analytics-panel,
+  .stat-visual {
+    width: 100vw;
+    min-width: 110px;
+  }
+}
+@media (max-width: 500px) {
+  .dashboard-panel {
+    padding: 6px 2vw 15px 2vw;
+  }
 }
 
 .App-logo {

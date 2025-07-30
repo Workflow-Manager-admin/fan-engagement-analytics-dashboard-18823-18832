@@ -1,0 +1,26 @@
+.loaderWrap {
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+  width: 100%;
+}
+.skeleton {
+  display: block;
+  background: linear-gradient(90deg, #f8f8fa 30%, #ececfb 60%, #ffffff 100%);
+  border-radius: 0.8rem;
+  animation: shimmer 1.53s infinite linear;
+  margin: 0.12rem 0px;
+  min-height: 42px;
+  opacity: 0.82;
+}
+.rect {
+  width: 100%;
+}
+@keyframes shimmer {
+  0% {
+    background-position: -500px 0;
+  }
+  100% {
+    background-position: 500px 0;
+  }
+}

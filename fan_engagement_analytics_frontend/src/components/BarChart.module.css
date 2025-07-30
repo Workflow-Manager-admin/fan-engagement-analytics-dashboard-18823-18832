@@ -1,0 +1,66 @@
+.chartWrapper {
+  width: 100%;
+  padding: 10px 10px 18px 10px;
+  background: #fff;
+  border-radius: 1.2rem;
+  box-shadow: 0 1.5px 10px #13cf8714;
+}
+.chartArea {
+  width: 100%;
+  height: 170px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+  align-items: flex-start;
+  justify-content: center;
+}
+.barGroup {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 2px 0;
+  width: 100%;
+  transition: box-shadow 0.2s, transform 0.15s;
+  border-radius: 1.5rem;
+  cursor: pointer;
+  outline: none;
+}
+.barOuter {
+  flex: 1 1 auto;
+  background: #f6f8ff;
+  border-radius: 1.3rem;
+  height: 18px;
+  overflow: hidden;
+  margin-right: 10px;
+  border: 1.5px solid #e9ecef;
+  min-width: 50px;
+}
+.bar {
+  height: 100%;
+  border-radius: 1.2rem 0 0 1.2rem;
+  transition: width 0.7s cubic-bezier(.74,.19,.04,1.03);
+  will-change: width;
+}
+.barGroup:focus, .barGroup:hover {
+  box-shadow: 0 3px 16px #4353ff12, 0 0 0 2px #13cf8766;
+  background: #f2fdfe;
+  transform: scale(1.02);
+}
+.barLabel {
+  font-weight: 600;
+  color: #4353ff;
+  font-size: 1em;
+  min-width: 55px;
+}
+.barValue {
+  color: #ff7e5f;
+  font-size: 0.96em;
+  min-width: 24px;
+  text-align: right;
+  font-weight: 700;
+}
+@media (max-width: 620px) {
+  .chartArea { gap: 0.38rem;}
+  .barGroup { font-size: 0.85em;}
+  .barOuter { height: 13px;}
+}

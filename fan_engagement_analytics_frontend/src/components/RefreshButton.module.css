@@ -1,0 +1,31 @@
+.refreshBtn {
+  background: #fff;
+  border: none;
+  border-radius: 50%;
+  padding: 0.45em;
+  cursor: pointer;
+  box-shadow: 0 1.5px 8px #4353ff15;
+  transition: box-shadow 0.14s;
+  outline: none;
+}
+.refreshBtn:focus, .refreshBtn:hover {
+  box-shadow: 0 0 0 3px #13cf8765;
+}
+.refreshBtn:active {
+  transform: scale(0.98);
+}
+.refreshBtn[disabled] {
+  opacity: 0.53;
+  pointer-events: none;
+}
+.spin {
+  animation: spin 0.88s linear infinite;
+  transform-origin: 50% 50%;
+}
+@keyframes spin {
+  100% { transform: rotate(360deg);}
+}
+.srOnly {
+  position: absolute;
+  left: -10000px;
+}

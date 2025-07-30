@@ -1,0 +1,39 @@
+.cloudWrap {
+  width: 98%;
+  border-radius: 1.3rem;
+  background: #fff6f1;
+  min-height: 104px;
+  padding: 22px 6px 6px 18px;
+  margin: 1.17rem 0 1.6rem 0;
+  box-shadow: 0 1.5px 10px #ff7e5f1f;
+  overflow: hidden;
+  outline: none;
+}
+.cloudInner {
+  display: flex;
+  gap: 1.35em 0.3em;
+  flex-wrap: wrap;
+  min-height: 70px;
+  align-items: flex-end;
+}
+.cloudWord {
+  font-family: inherit;
+  font-weight: 600;
+  margin-right: 0.9em;
+  margin-bottom: 0.17em;
+  animation: appearcloud 0.77s cubic-bezier(.78,.11,.55,1.14) both;
+  transition: text-shadow 0.22s, color 0.18s;
+  cursor: pointer;
+  border-radius: 6px;
+  outline: none;
+  padding: 2px 4px;
+}
+.cloudWord:hover,.cloudWord:focus {
+  text-shadow: 0px 2px 16px #4353ff22, 0 2px 20px #13cf8767;
+  color: #ff7e5f;
+  background: #fffefb;
+}
+@keyframes appearcloud {
+  from { opacity: 0; transform: translateY(18px) scale(0.7);}
+  to   { opacity: 1; transform: none;}
+}

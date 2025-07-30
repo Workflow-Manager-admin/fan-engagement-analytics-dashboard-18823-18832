@@ -1,0 +1,15 @@
+.animated-section {
+  opacity: 0.65;
+  transform: translateY(22px);
+  transition: opacity 0.45s cubic-bezier(.8,.18,.41,1.15), transform 0.45s cubic-bezier(.65,.1,.34,.94);
+  will-change: opacity, transform;
+}
+.animated-section.open {
+  opacity: 1;
+  transform: none;
+}
+.animated-section.closed {
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(35px) scale(0.97);
+}
